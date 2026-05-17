@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Learn SQL with live browser exercises, instant feedback, and guided lessons.">
+    <title>QueryCraft SQL Academy</title>
+    <link rel="stylesheet" href="styles.css?v=3">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Course navigation">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div>
+            <strong>QueryCraft</strong>
+            <small>SQL Academy</small>
+          </div>
+        </div>
+
+        <div class="progress-block">
+          <div>
+            <span id="progressLabel">0 of 0 complete</span>
+            <strong id="progressPercent">0%</strong>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div id="progressFill"></div>
+          </div>
+        </div>
+
+        <nav id="lessonNav" class="lesson-nav"></nav>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Interactive SQL learning platform</p>
+            <h1 id="lessonTitle">Loading lesson</h1>
+          </div>
+          <div class="top-actions">
+            <button id="resetProgressBtn" class="ghost-button" type="button">Reset</button>
+            <a class="primary-link" href="#publish">Publish guide</a>
+          </div>
+        </header>
+
+        <section class="hero-strip" aria-label="Platform overview">
+          <div class="hero-copy">
+            <strong>Practice SQL directly in your browser.</strong>
+            <span>Run queries, inspect tables, and unlock each exercise with instant feedback.</span>
+          </div>
+          <div class="query-visual" aria-hidden="true">
+            <span>SELECT</span>
+            <span>customers.name</span>
+            <span>FROM</span>
+            <span>orders</span>
+          </div>
+        </section>
+
+        <section class="lesson-layout">
+          <article class="lesson-panel">
+            <div class="section-heading">
+              <span>Lesson</span>
+              <strong id="lessonLevel">Beginner</strong>
+            </div>
+            <div id="lessonBody" class="lesson-body"></div>
+            <div class="lesson-controls">
+              <button id="prevBtn" class="ghost-button" type="button">Previous</button>
+              <button id="nextBtn" class="ghost-button" type="button">Next</button>
+            </div>
+          </article>
+
+          <section class="practice-panel" aria-label="SQL exercise workspace">
+            <div class="section-heading">
+              <span>Live Exercise</span>
+              <strong id="exerciseStatus">Not solved</strong>
+            </div>
+            <div id="exerciseList" class="exercise-list" aria-label="Exercises for this lesson"></div>
+
+            <div class="prompt-box">
+              <h2 id="exerciseTitle">Exercise</h2>
+              <p id="exercisePrompt"></p>
+            </div>
+
+            <div class="editor-toolbar">
+              <button id="runBtn" class="icon-button run-button" type="button" aria-label="Run query" title="Run query">
+                <span aria-hidden="true">▶</span>
+                Run
+              </button>
+              <button id="checkBtn" class="icon-button" type="button" aria-label="Check answer" title="Check answer">
+                <span aria-hidden="true">✓</span>
+                Check
+              </button>
+              <button id="hintBtn" class="icon-button" type="button" aria-label="Show hint" title="Show hint">
+                <span aria-hidden="true">?</span>
+                Hint
+              </button>
+              <button id="solutionBtn" class="icon-button" type="button" aria-label="Show solution" title="Show solution">
+                <span aria-hidden="true">SQL</span>
+                Solution
+              </button>
+            </div>
+
+            <label class="editor-label" for="queryInput">SQL editor</label>
+            <textarea id="queryInput" spellcheck="false" autocomplete="off"></textarea>
+
+            <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+
+            <div class="results-wrap">
+              <div class="section-heading compact">
+                <span>Results</span>
+                <strong id="resultCount">0 rows</strong>
+              </div>
+              <div id="resultsTable" class="table-shell"></div>
+            </div>
+          </section>
+        </section>
+
+        <section class="data-section" aria-label="Sample database">
+          <div class="section-heading">
+            <span>Sample Database</span>
+            <strong>3 tables</strong>
+          </div>
+          <div id="schemaGrid" class="schema-grid"></div>
+        </section>
+
+        <section id="publish" class="publish-section" aria-label="Publish guide">
+          <div>
+            <p class="eyebrow">Make it public</p>
+            <h2>Deploy this platform for anyone to use</h2>
+            <p>
+              This project is a static website, so it can be hosted free on GitHub Pages, Netlify,
+              Cloudflare Pages, or Vercel. Upload these files, set the build command to none, and
+              publish the root folder.
+            </p>
+          </div>
+          <ol>
+            <li>Create a new public repository and add these files.</li>
+            <li>Enable GitHub Pages from the repository settings, or drag the folder into Netlify.</li>
+            <li>Share the generated public URL with learners.</li>
+          </ol>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js?v=3"></script>
+  </body>
+</html>
