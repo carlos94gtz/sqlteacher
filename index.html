@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Learn SQL with live browser exercises, instant feedback, and guided lessons.">
+    <meta name="description" content="Learn SQL with live browser exercises, instant feedback, and paid interview practice packs.">
     <title>QueryCraft SQL Academy</title>
-    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="styles.css?v=4">
   </head>
   <body>
     <div class="app-shell">
@@ -43,14 +43,15 @@
           </div>
           <div class="top-actions">
             <button id="resetProgressBtn" class="ghost-button" type="button">Reset</button>
-            <a class="primary-link" href="#publish">Publish guide</a>
+            <a class="ghost-link" href="#about">About</a>
+            <a class="primary-link" href="#upgrade">Upgrade</a>
           </div>
         </header>
 
         <section class="hero-strip" aria-label="Platform overview">
           <div class="hero-copy">
             <strong>Practice SQL directly in your browser.</strong>
-            <span>Run queries, inspect tables, and unlock each exercise with instant feedback.</span>
+            <span>Run queries, inspect tables, unlock exercises with instant feedback, and upgrade when you want job-focused interview practice.</span>
           </div>
           <div class="query-visual" aria-hidden="true">
             <span>SELECT</span>
@@ -127,6 +128,84 @@
           <div id="schemaGrid" class="schema-grid"></div>
         </section>
 
+        <section id="upgrade" class="upgrade-section" aria-label="Premium SQL practice pack">
+          <div class="upgrade-copy">
+            <p class="eyebrow">Premium practice</p>
+            <h2>SQL Interview Practice Pack</h2>
+            <p>
+              Keep the beginner course free, then sell a focused pack for learners who want job-ready
+              repetition: advanced prompts, answer explanations, portfolio-style datasets, and a completion certificate.
+            </p>
+            <div class="value-grid" aria-label="Premium pack highlights">
+              <div><strong>100</strong><span>job-style exercises</span></div>
+              <div><strong>25</strong><span>interview scenarios</span></div>
+              <div><strong>1</strong><span>completion certificate</span></div>
+            </div>
+          </div>
+
+          <article class="pricing-card">
+            <div class="pricing-top">
+              <span>One-time access</span>
+              <strong>$19</strong>
+            </div>
+            <ul>
+              <li>Advanced JOIN, GROUP BY, HAVING, and subquery drills</li>
+              <li>Data analyst interview simulations</li>
+              <li>Downloadable SQL cheat sheet</li>
+              <li>Solutions with plain-English explanations</li>
+              <li>Completion certificate template</li>
+            </ul>
+            <a id="checkoutLink" class="checkout-button" href="#" data-checkout>Get the practice pack</a>
+            <p id="checkoutNote" class="checkout-note">Payment link setup pending.</p>
+          </article>
+        </section>
+
+        <section class="premium-roadmap" aria-label="Paid content roadmap">
+          <div class="section-heading">
+            <span>Paid Curriculum</span>
+            <strong>Next products</strong>
+          </div>
+          <div class="roadmap-grid">
+            <article>
+              <h3>Interview Mode</h3>
+              <p>Timed SQL challenges with realistic analyst prompts and scoring.</p>
+            </article>
+            <article>
+              <h3>Business Datasets</h3>
+              <p>Sales, support, product, and finance datasets for portfolio practice.</p>
+            </article>
+            <article>
+              <h3>Certificate Pack</h3>
+              <p>A completion certificate learners can attach to a resume or profile.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="about" class="trust-section" aria-label="About and policies">
+          <div>
+            <p class="eyebrow">About</p>
+            <h2>Built for practical SQL learners</h2>
+            <p>
+              QueryCraft helps beginners practice SQL in small, visible steps. The free course teaches
+              the core patterns; premium packs fund deeper job-focused lessons and new datasets.
+            </p>
+          </div>
+          <div class="policy-grid">
+            <article>
+              <h3>Contact</h3>
+              <p>Questions, access issues, or refunds can be handled through the support email you set in the site config.</p>
+            </article>
+            <article>
+              <h3>Refund Policy</h3>
+              <p>Offer a simple 7-day refund window for paid packs until the product terms are customized.</p>
+            </article>
+            <article>
+              <h3>Privacy</h3>
+              <p>The free course runs in the browser and stores progress locally. Payment processing should happen through Stripe.</p>
+            </article>
+          </div>
+        </section>
+
         <section id="publish" class="publish-section" aria-label="Publish guide">
           <div>
             <p class="eyebrow">Make it public</p>
@@ -146,6 +225,6 @@
       </main>
     </div>
 
-    <script src="app.js?v=3"></script>
+    <script src="app.js?v=4"></script>
   </body>
 </html>

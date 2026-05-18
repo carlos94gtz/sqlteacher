@@ -1,5 +1,11 @@
 "use strict";
 
+const monetization = {
+  checkoutUrl: "",
+  supportEmail: "support@example.com",
+  productName: "SQL Interview Practice Pack"
+};
+
 const database = {
   customers: [
     { id: 1, name: "Ava Patel", city: "Austin", plan: "Pro", signup_date: "2025-01-12" },
@@ -469,6 +475,8 @@ const els = {
   resultCount: document.querySelector("#resultCount"),
   resultsTable: document.querySelector("#resultsTable"),
   schemaGrid: document.querySelector("#schemaGrid"),
+  checkoutLink: document.querySelector("#checkoutLink"),
+  checkoutNote: document.querySelector("#checkoutNote"),
   runBtn: document.querySelector("#runBtn"),
   checkBtn: document.querySelector("#checkBtn"),
   hintBtn: document.querySelector("#hintBtn"),
@@ -477,6 +485,24 @@ const els = {
   nextBtn: document.querySelector("#nextBtn"),
   resetProgressBtn: document.querySelector("#resetProgressBtn")
 };
+
+function configureCheckout() {
+  if (!els.checkoutLink || !els.checkoutNote) return;
+  if (monetization.checkoutUrl) {
+    els.checkoutLink.href = monetization.checkoutUrl;
+    els.checkoutLink.textContent = "Buy the practice pack";
+    els.checkoutNote.textContent = "Secure checkout opens in a new tab.";
+    els.checkoutLink.target = "_blank";
+    els.checkoutLink.rel = "noopener";
+    return;
+  }
+
+  const subject = encodeURIComponent(`Access request: ${monetization.productName}`);
+  const body = encodeURIComponent("Hi, I would like to buy the SQL Interview Practice Pack when it is available.");
+  els.checkoutLink.href = `mailto:${monetization.supportEmail}?subject=${subject}&body=${body}`;
+  els.checkoutLink.textContent = "Request access";
+  els.checkoutNote.textContent = "Add a Stripe Payment Link in app.js to turn this into a live checkout.";
+}
 
 function normalizeSql(sql) {
   return sql.trim().replace(/;$/, "").replace(/\s+/g, " ");
@@ -948,4 +974,5 @@ els.queryInput.addEventListener("keydown", (event) => {
 });
 
 renderSchema();
+configureCheckout();
 loadLesson(0);

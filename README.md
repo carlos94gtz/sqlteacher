@@ -8,6 +8,7 @@ A public-ready static web platform for learning SQL with live browser exercises.
 - Three live exercises per topic, with topic-level progress tracking
 - Live in-browser SQL runner for beginner-friendly query practice
 - Instant exercise validation
+- Monetization-ready upgrade section for a paid SQL Interview Practice Pack
 - Sample database schema browser
 - Local progress saving with `localStorage`
 - No backend, no build step, and no paid services required
@@ -48,6 +49,26 @@ Use these settings:
 - Framework preset: none
 - Build command: none
 - Output directory: root
+
+## Monetize the site
+
+The home page includes a premium offer for a one-time SQL Interview Practice Pack.
+
+To activate checkout:
+
+1. Create a Stripe Payment Link for the product.
+2. Open `app.js`.
+3. Set `monetization.checkoutUrl` to the Stripe Payment Link.
+4. Set `monetization.supportEmail` to your support email.
+5. Redeploy the site.
+
+Until `checkoutUrl` is set, the button uses a mailto access request so visitors can still express interest.
+
+Suggested first offer:
+
+- Product: SQL Interview Practice Pack
+- Price: $19 one time
+- Includes: 100 exercises, 25 interview scenarios, cheat sheet, solutions, and certificate template
 
 ## Extend the course
 
